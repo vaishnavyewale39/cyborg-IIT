@@ -1,0 +1,117 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --color-void: #0a0a0f;
+  --color-surface-1: #12121a;
+  --color-surface-2: #1a1a24;
+  --color-surface-3: #222230;
+  
+  --color-cyan-beam: #00f2fe;
+  --color-violet-core: #9d4edd;
+  --color-sky-kinetic: #4cc9f0;
+  
+  --color-text-primary: #f1f5f9;
+  --color-text-muted: #94a3b8;
+  --color-text-ghost: #475569;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background-color: #0a0a0f;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  code, pre, .font-mono {
+    font-family: var(--font-mono);
+  }
+}
+
+/* Subtle cybernetic vector subgrid */
+.cyber-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+.cyber-grid-dense {
+  background-size: 16px 16px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 242, 254, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 242, 254, 0.03) 1px, transparent 1px);
+}
+
+/* Photonic glow signatures */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.18);
+}
+
+.glow-cyan-sm {
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.25);
+}
+
+.glow-violet {
+  box-shadow: 0 0 24px rgba(157, 78, 221, 0.22);
+}
+
+.glow-violet-sm {
+  box-shadow: 0 0 12px rgba(157, 78, 221, 0.25);
+}
+
+.glow-pill {
+  box-shadow: 0 0 16px rgba(0, 242, 254, 0.35);
+}
+
+/* Hair-thin modular border */
+.cyber-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cyber-border-active {
+  border: 1px solid rgba(0, 242, 254, 0.4);
+}
+
+.cyber-border-gradient {
+  border-image: linear-gradient(to bottom right, #00f2fe, #9d4edd) 1;
+}
+
+/* Cockpit overhead linear highlight */
+.cockpit-highlight {
+  position: relative;
+}
+
+.cockpit-highlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 242, 254, 0.3), transparent);
+  pointer-events: none;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #222230;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+}
